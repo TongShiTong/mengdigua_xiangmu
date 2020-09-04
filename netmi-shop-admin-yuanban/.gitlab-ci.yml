@@ -1,0 +1,10 @@
+stages:
+  - develop_deploy
+develop_deploy:
+  stage: develop_deploy
+  script:
+    - ssh -tt kshu@101.37.14.104 "cd /var/www/html/01/develop/merchant/merchant/web/netmi-shop-admin && git -c diff.mnemonicprefix=false -c core.quotepath=false fetch origin && git -c diff.mnemonicprefix=false -c core.quotepath=false pull --no-commit origin feature-2.0"
+  only:
+    - feature-2.0
+  tags:
+    - web

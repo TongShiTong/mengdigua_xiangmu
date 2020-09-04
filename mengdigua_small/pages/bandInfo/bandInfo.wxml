@@ -1,0 +1,21 @@
+<!--pages/bandInfo/bandInfo.wxml-->
+<navbar isTransparent="true" />
+
+<view class="page-total" style="overflow:hidden;height:{{pageHeight+totalHeight}}px">
+  <image class="image-bg" lazy-load="true" mode="widthFix" src="https://koali.oss-cn-hangzhou.aliyuncs.com/WechatIMG22.png"></image>
+
+  <view style="text-align:center;position:absolute;top:65%;width:100%;">
+    <image src="/images/logo.png" style="border-radius:50%;width:80rpx;height:80rpx;"></image>
+    <view style="font-size:36rpx;">萌地瓜</view>
+  </view>
+  <button class='confirm-text flex-r' bindgetuserinfo='confirm' open-type="getUserInfo">
+    <image class="image-icon" src="/images/share-wechat.png" mode="widthFix"></image>
+    <text>微信登录</text>
+  </button>
+  <view class="button-text flex-r">
+   <text style="color:#BBBBBB">登录即表明您同意我们的</text> 
+    <navigator url="/pages/rich/rich?viewId=1&title=注册协议">
+      《萌地瓜电商服务协议》
+    </navigator>
+  </view>
+</view>

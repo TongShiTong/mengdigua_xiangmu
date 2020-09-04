@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资费标准</title>
+    <link rel="stylesheet" href="./base/same.css">
+    <link rel="shortcut icon" href="./base/images/logo.png" type="image/x-icon">
+    <style>
+        #app {
+            background: rgb(249, 249, 249);
+        }
+
+        .circle-bg {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            margin: 16px 24px 16px 89px;
+            padding: 19px;
+            behavior: url(PIE.htc);
+            vertical-align: middle;
+        }
+
+
+        .two-tip {
+            padding-right: 43px;
+            font-size: 0;
+        }
+
+
+        .two-txt-box {
+            display: inline-block;
+            width: 964px;
+            font-size: 14px;
+            vertical-align: middle;
+        }
+
+        .two-title {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 25px;
+        }
+
+        .two-img {
+            width: 42px;
+        }
+
+
+        .expenses-box {
+            margin: 13px 0 20px;
+            padding: 21px 0;
+            border-top: 1px dashed #707070;
+            border-bottom: 1px dashed #707070;
+        }
+
+        .load-btn {
+            display: inline-block;
+            width: 117px;
+            height: 40px;
+            background: #7c7c7c;
+            font-weight: bold;
+            line-height: 40px;
+            color: white;
+            border-radius: 6px;
+            text-align: center;
+            border: none;
+            margin-bottom: 1px;
+            /* behavior:url(PIE.htc) */
+        }
+
+        .expenses-title {
+            padding-bottom: 9px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .expenses-txt {
+            text-align: center;
+
+        }
+
+        .main-title-line {
+            background: #6481FC;
+            margin-right: 5px;
+            display: inline-block;
+            width: 2px;
+            height: 20px;
+            position: relative;
+            top: 4px;
+        }
+
+        .money {
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 45px;
+            margin-top: 27px;
+            text-align: center;
+        }
+
+        .main-tip-txt {
+            font-weight: bold;
+        }
+
+
+        .main-title {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 45px;
+        }
+
+        .in-block {
+            display: inline-block\9;
+            vertical-align: top;
+        }
+
+        .in-block:first-child+.in-block {
+            margin-left: 123px;
+            margin-right: 171px;
+        }
+
+        .in-block:first-child {
+            margin-left: 14px;
+        }
+
+        .contain {
+            padding-bottom: 133px;
+        }
+    </style>
+    <script src="./base/ie/html5shiv.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header-root">
+            <div class="flex-s-c nav-box">
+                <img class="nav-logo" src="./base/images/home/nav-logo.png" alt="加载异常">
+                <div class="header-line"></div>
+                <div class="nav_logo_txt">商家入驻</div>
+            </div>
+            <nav class="nav-root">
+                <ul class="nav-ul flex-s-c">
+                    <li class="nav-li"><a href="./home.html" class=" nav-a"> 首页</a></li>
+                    <li class="nav-li"><a href="./guide.html" class=" nav-a"> 入驻指南</a></li>
+                    <li class="nav-li"><a href="./ask-for.html" class=" nav-a"> 入驻要求</a></li>
+                    <li class="nav-li nav-active"><a href="./expenses.html" class=" nav-a"> 资费标准</a></li>
+                    <li class="nav-li"><a href="./must-see.html" class=" nav-a"> 经营必读</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="contain">
+            <div class="two-bg-box">
+                <div class="two-head-box">
+                    资费组成介绍
+                </div>
+                <div class="two-tip">
+                    <div class="circle-bg" style="background:#6481FC">
+                        <img src="./base/images/gather/expenses.png" alt="加载异常" class="two-img">
+                    </div>
+                    <div class="two-txt-box">
+                        <div class="two-title">
+                            保证金
+                        </div>
+                        <div class="two-txt">
+                            商家在萌地瓜经营必须缴存保证金，保证金主要用于保证商家按照《萌地瓜服务协议》、萌地瓜规则经营，且在商家有违规行为时根据《萌地瓜服务协议》及相关规则规
+                            定用于向萌地瓜及消费者支付违约金。续约商家须在当年续签要求的时间内一次性缴存次年保证金，新签商家在申请入驻审核通过后一次性缴存当年的保证金。
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="two-tip">
+                    <div class="circle-bg" style="background:#549A51;">
+                        <img src="./base/images/gather/expenses2.png" alt="加载异常" class="two-img">
+                    </div>
+                    <div class="two-txt-box">
+                        <div class="two-title">
+                            软件服务年费
+                        </div>
+                        <div class="two-txt">
+                            商家在萌地瓜经营需缴纳年费。
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="two-tip">
+                    <div class="circle-bg" style="background:#F6AD1C;">
+                        <img src="./base/images/gather/expenses3.png" alt="加载异常" class="two-img">
+                    </div>
+                    <div class="two-txt-box">
+                        <div class="two-title">
+                            软件服务费
+                        </div>
+                        <div class="two-txt">
+                            商家在萌地瓜经营需要按照其销售额一定百分比（简称“费率”）交纳软件服务费。
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="two-bg-box">
+                <div class="two-head-box">
+                    入驻需要多少资费
+                </div>
+                <div class="flex ">
+                    <div class="menu">
+                        <ul class="menu-ul">
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img menu-img-active"> 服饰
+                            </li>
+                            <li class="menu-li-ul">
+                                <ul class="small-menu-ul">
+                                    <li class="small-menu-li small-li-active"><a>女装/女士精品</a></li>
+                                    <li class="small-menu-li"><a>男装</a> </li>
+                                    <li class="small-menu-li"><a>女士内衣/男士内衣/家居服</a></li>
+                                    <li class="small-menu-li">服饰配件/皮带/帽子/围巾</li>
+                                </ul>
+                            </li>
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 母婴
+                            </li>
+                            <li class="menu-li-ul">
+                                <ul class="small-menu-ul">
+                                    <li class="small-menu-li">女装/女士精品</li>
+                                    <li class="small-menu-li">男装</li>
+                                    <li class="small-menu-li">女士内衣/男士内衣/家居服</li>
+                                    <li class="small-menu-li">服饰配件/皮带/帽子/围巾</li>
+                                </ul>
+                            </li>
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 化妆品
+                            </li>
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 食品
+                            </li>
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 3C
+                            </li>
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 运动户外
+                            </li>
+
+
+
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 汽车及配件
+                            </li>
+
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 珠宝配饰
+                            </li>
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 家用电器
+                            </li>
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 居家日用
+                            </li>
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 家装家具家纺
+                            </li>
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 鞋类箱包
+                            </li>
+                            <li class="menu-li">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 保健品及医药
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="main-border-line"></div>
+                    <div class="main">
+                        <div class="main-header">
+                            <div class="main-header-circle">
+                                !
+                            </div>
+                            各店铺类型需要准备的资质材料略有不同，请详阅
+                        </div>
+                        <div class="select-btns flex-c-c">
+                            <div class="select-btn select-btn-active">品牌方</div>
+                            <div class="select-line"></div>
+                            <div class="select-btn">农场主</div>
+                            <div class="select-line"></div>
+                            <div class="select-btn">工厂店</div>
+                        </div>
+                        <div class="shop-type flex-s-c">
+                            商家权人类型：
+                            <div class="flex-s-c shop-btn">
+                                <div class="shop-type-circle" style="display: none;">
+
+                                </div>
+                                <img src="./base/images/gather/select.png" alt="加载异常" class="shop-type-img">
+                                R标
+                            </div>
+                            <div class="flex-s-c shop-btn">
+                                <div class="shop-type-circle">
+
+                                </div>
+                                <img style="display: none;" src="./base/images/gather/select.png" alt="加载异常"
+                                    class="shop-type-img">
+                                TM标
+                            </div>
+
+                        </div>
+                        <div class="expenses-box">
+                            <a href="" class="load-btn">下载资费清单</button></a>
+                            <div class="expenses-title">
+                                您所需资费
+                            </div>
+                            <div class="expenses-txt">
+                                查询结果仅供参考，详细内容请下载说明文档
+                            </div>
+                            <div style="display: flex;">
+                                <div class="in-block">
+                                    <div class="money">
+                                        ？
+                                    </div>
+                                    <div class="expenses-title">
+                                        保证金
+                                    </div>
+                                    <div class="expenses-txt">
+                                        当经营多个类目时按照保证金最高的类目缴纳
+                                    </div>
+                                </div>
+                                <div class="in-block">
+                                    <div class="money">
+                                        ？
+                                    </div>
+                                    <div class="expenses-title">
+                                        软件服务年费
+                                    </div>
+
+                                </div>
+                                <div class="in-block">
+                                    <div class="money">
+                                        ？
+                                    </div>
+                                    <div class="expenses-title">
+                                        软件服务费费率
+                                    </div>
+                                    <div class="expenses-txt">
+                                        具体以下部详细表格内容为准
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="main-tip-txt">
+                            规则说明：
+                        </div>
+                        <div class="main-title">
+                            <div class="main-title-line"></div>
+                            保证金
+                        </div>
+
+                        <div class="main-txt">
+                            商家在萌地瓜平台经营必须缴存保证金，保证金主要用于保证商家按照《萌地瓜服务协议》、规则经营，且在商家有违规行为时根据《萌地瓜服
+                            务协议》及相关规则规定用于向萌地瓜及消费者支付违约金。续约商家须在当年续签要求的时间内一次性缴存次年保证金，新签商家在申请入驻审
+                            核通过后一次性缴存当年的保证金。
+                        </div>
+
+                        <div class="main-title">
+                            <div class="main-title-line"></div>
+                            软件服务年费
+                        </div>
+
+                        <div class="main-txt">
+                            新开店：入驻审核通过后15天内，根据合同有效期限一次性缴纳；<br>
+                            店铺续签：在当年续签要求的时间内一次性存缴次年年费。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <footer class="footer_root">
+        <div style="padding-top: 28px;padding-bottom: 15px;"><img src="./base/images/foot-logo.png" alt="加载异常"
+                class="foot-logo"></div>
+        <div class="footer_tips flex-c-c">
+            <div class="footer_tip">
+                <a href="http://applying.mengdigua.cn" target="_blank">入驻萌地瓜</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./company.html" target="_blank">关于我们</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./service-center.html" target="_blank"> 帮助中心</a>
+            </div>
+            <div class="footer_line">
+            </div>
+
+            <div class="footer_tip">
+                <a href="./safeguard.html" target="_blank"> 消费者保障</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./report.html" target="_blank"> 廉政举报</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./base/images/permit.jpg" target="_blank" class="footer_a_img"> 营业执照</a>
+            </div>
+
+
+        </div>
+        <div class="footer-bottom">
+            <span> ©2020 萌瓜（浙江）网络科技有限公司 &nbsp;<a
+                href="./base/images/zzdxxk.jpg" target="_blank"
+                rel="noopener noreferrer"> 增值电信业务经营许可证：浙B2-20200976</a>&nbsp; &nbsp;<a href="http://beian.miit.gov.cn/state/outPortal/loginPortal.action"
+                    target="_blank" rel="noopener noreferrer"> 浙ICP备19049378号-5</a></span>
+            &nbsp; &nbsp;<img src="./base/images/foot-public.png" alt="加载异常" class="footer-public"> &nbsp;
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011802001974" target="_blank"
+                rel="noopener noreferrer">浙公网安备 33011802001974号</a> &nbsp;&nbsp;
+                <br>
+                <!-- <a href="./base/images/yiyao.png" target="_blank" rel="noopener noreferrer">互联网药品信息服务资格证书：（浙）-经营性-2020-0106</a> -->
+                <span>互联网药品信息服务资格证书：（浙）-经营性-2020-0106</span>&nbsp; &nbsp;
+                <span>浙江省网络食品销售第三方平台提供者备案：浙网食A33000038</span>
+        </div>
+    </footer>
+    <div class="float_window">
+        <a href="./service-center.html" style="display: inline-block; display: flex;
+        justify-content: space-between; align-items: center; height: 385px;">
+            <div class="float_left">
+                服
+                务
+                大
+                厅
+                《
+            </div>
+            <div class="float_right">
+                <div class="float_box">
+                    <img src="./base/images/home/service1.png" alt="" class="float_img">
+                    <div class="float_txt">
+                        招商服务指引
+                    </div>
+                </div>
+                <div class="float_box float-box2">
+                    <img src="./base/images/home/service2.png" alt="" class="float_img">
+                    <div class="float_txt"> 招商入驻问题</div>
+                </div>
+                <div class="float_box">
+                    <img src="./base/images/home/service3.png" alt="" class="float_img">
+                    <div class="float_txt"> 服务讯息</div>
+                </div>
+            </div>
+        </a>
+    </div>
+</body>
+<script src="./base/jquery.min.js"></script>
+<script>
+
+
+    
+    //url处理
+    var url = window.location.href;
+    var urlIndex = url.indexOf("?");
+   
+    var paramObj = {
+        "category-id": 33, "shop-type": 1, "trade-type": 0
+    };
+    if (urlIndex != -1) {
+        url = url.slice(0, urlIndex);
+        console.log(window.location.search)
+        var urlArr = window.location.search.slice(1).split("&");
+        for (var i = 0; i < urlArr.length; i++) {
+            var paramArr = urlArr[i].split("=");
+            paramObj[paramArr[0]] = paramArr[1]
+        };
+    }
+
+    $(function () {
+        var size = 0;
+
+        /************  单选***************/
+
+
+
+
+        $(".shop-btn").click(function (e) {
+            var index = $(".shop-btn").index(e.currentTarget);
+            window.location.href = url + "?category-id=" + paramObj["category-id"] + "&shop-type=" + paramObj["shop-type"] + "&trade-type=" + index;
+            // shopBtn(index)
+        })
+
+        function shopBtn(index) {
+            if (index == 1) {
+                $(".shop-type-circle").eq(0).css("display", "block");
+                $(".shop-type-circle").eq(1).css("display", "none");
+                $(".shop-type-img").eq(1).css("display", "block");
+                $(".shop-type-img").eq(0).css("display", "none");
+            }
+            else {
+                $(".shop-type-circle").eq(1).css("display", "block");
+                $(".shop-type-circle").eq(0).css("display", "none");
+                $(".shop-type-img").eq(0).css("display", "block");
+                $(".shop-type-img").eq(1).css("display", "none");
+            }
+
+        };
+
+
+
+//新加的
+        shopBtn(paramObj["trade-type"]);
+        $(".select-btn").removeClass("select-btn-active").eq(paramObj["shop-type"] - 1).addClass("select-btn-active");
+
+//替换函数
+        $(".select-btn").click(function (e) {
+            var index = $(".select-btn").index(e.currentTarget);
+            window.location.href = url + "?category-id=" + paramObj["category-id"] + "&shop-type=" +( index*1 + 1) + "&trade-type=0";
+            // $(".select-btn").removeClass("select-btn-active").eq(index).addClass("select-btn-active");
+            // if (index >= 2) {
+            //     index = 1
+            // }
+            // $(".select-table").css("display", "none").eq(index).css("display", "block");
+        });
+
+        /*****************************菜单选择********************/
+        var menuIndex = 0;
+        var smallMenuIndex = 0;
+        $(".menu-li-ul").eq(menuIndex).slideDown();
+
+        $(".small-menu-li").removeClass("small-li-active").eq(smallMenuIndex).addClass("small-li-active");
+        if ($(".small-menu-li").children()) {
+            $(".small-menu-li").children().removeClass("small-li-active").eq(smallMenuIndex).addClass("small-li-active");
+        }
+
+
+        $(".small-menu-li").click(function (e) {
+            var index = $(".small-menu-li").index(e.currentTarget);
+            $(".small-menu-li").removeClass("small-li-active").eq(index).addClass("small-li-active");
+            if ($(".small-menu-li").eq(index).children()) {
+                $(".small-menu-li").children().removeClass("small-li-active").eq(index).addClass("small-li-active");
+            }
+            smallMenuIndex = index;
+        });
+
+        var obj = {};
+        obj[menuIndex + ""] = 1
+        $(".menu-li").click(function (e) {
+            var index = $(".menu-li").index(e.currentTarget);
+            //0是隐藏 1是显示
+            if (index == menuIndex) {
+                $(".menu-li-ul").eq(index).slideToggle();
+                $(".menu-img").eq(index).toggleClass("menu-img-active");
+                if (!obj[index + ""]) {
+                    obj[index + ""] = 1
+                }
+                else {
+                    obj[index + ""] = 0
+                };
+            } else {
+                $(".menu-li-ul").slideUp();
+                $(".menu-li-ul").eq(index).slideDown();
+                $(".menu-img").removeClass("menu-img-active").eq(index).addClass("menu-img-active");
+                obj[index + ""] = 1;
+                obj[menuIndex + ""] = 0;
+                menuIndex = index;
+            }
+
+
+        });
+
+
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>入驻要求</title>
+    <link rel="stylesheet" href="./base/same.css">
+    <link rel="shortcut icon" href="./base/images/logo.png" type="image/x-icon">
+    <script src="./base/ie/html5shiv.min.js"></script>
+    <style>
+        .avatar {
+            padding: 30px 0;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 33px;
+        }
+
+        .shop-type-avatar {
+            display: inline-block;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background-origin: 50% 50%;
+            background-size: cover;
+            margin-right: 24px;
+            flex-shrink: 0;
+        }
+
+        .shop-type-avatar1 {
+            background-image: url("./base/images/ask/type1.png");
+        }
+
+        .shop-type-avatar2 {
+            background-image: url("./base/images/ask/type2.png");
+        }
+
+        .shop-type-avatar3 {
+            background-image: url("./base/images/ask/type3.png");
+        }
+
+        .shop-avatar {
+            vertical-align: top\9;
+            display: inline-block\9;
+            width: 400px;
+            width: 395px\9;
+            flex-grow: 0;
+            padding: 0 24px;
+            align-items: center;
+        }
+
+        .shop-avatar2 {
+            padding-left: 0;
+        }
+
+        .text-box {
+            padding: 16px 0 16px 24px;
+        }
+
+        .contain {
+            padding-bottom: 105px;
+        }
+
+        .select-margin {
+            margin: 17px 0 14px;
+
+        }
+
+        .ask-for {
+            margin: 16px 0 10px;
+        }
+
+        table {
+            font-size: 0\9;
+            margin-bottom: 16px;
+            border-collapse: collapse;
+            text-align: left;
+            width: 100%;
+            box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        td {
+            text-align: left\9;
+            font-size: 14px;
+            padding: 12px 0 12px 24px;
+        }
+
+        tr:first-child {
+            font-size: 14px;
+            text-align: left\9;
+            background: rgba(0, 0, 0, 0.05);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0c000000, endColorstr=#0c000000);
+            padding: 12px 0 12px 24px;
+        }
+
+
+        .tr:nth-child(2n+1) {
+            background: rgba(0, 0, 0, 0.05);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0c000000, endColorstr=#0c000000);
+        }
+
+        tr td:first-child {
+            width: 34px;
+        }
+
+        tr td:first-child+td {
+            width: 289px;
+
+        }
+
+
+        tr td:nth-child(3) {
+            width: 589px;
+        }
+
+
+
+
+
+
+
+        td a {
+            color: #6481FC
+        }
+
+        .load-btn {
+            display: inline-block\9;
+            padding: 0 15px;
+            line-height: 40px;
+            border-radius: 6px;
+            border: none;
+            color: white;
+            font-weight: bold;
+            background: #6481FC;
+        }
+
+
+        .load-box {
+            padding-bottom: 10px;
+            border-bottom: dashed 1px #707070;
+            margin-bottom: 11px;
+        }
+
+        .load-btn2 {
+            background: #7C7C7C;
+            margin-left: 24px;
+        }
+
+        .name-tip {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22px;
+            color: rgba(0, 0, 0, 0.9);
+            margin-top: 10px;
+        }
+
+        .name-tip2 {
+            width: 260px;
+        }
+
+        .avater-txt {
+            vertical-align: top\9;
+            display: inline-block\9;
+            width: 205px\9;
+        }
+
+        #app {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header-root">
+            <div class="flex-s-c nav-box">
+                <img class="nav-logo" src="./base/images/home/nav-logo.png" alt="加载异常">
+                <div class="header-line"></div>
+                <div class="nav_logo_txt">商家入驻</div>
+            </div>
+            <nav class="nav-root">
+                <ul class="nav-ul flex-s-c">
+                    <li class="nav-li"><a href="./home.html" class=" nav-a"> 首页</a></li>
+                    <li class="nav-li"><a href="./guide.html" class=" nav-a"> 入驻指南</a></li>
+                    <li class="nav-li nav-active"><a href="./ask-for.html" class=" nav-a"> 入驻要求</a></li>
+                    <li class="nav-li"><a href="./expenses.html" class=" nav-a"> 资费标准</a></li>
+                    <li class="nav-li"><a href="./must-see.html" class=" nav-a"> 经营必读</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="contain">
+            <div class="two-bg-box">
+                <div class="two-head-box">
+                    店铺类型介绍
+                </div>
+                <div class="avatar flex-b-c">
+                    <div class="flex shop-avatar">
+                        <div class="shop-type-avatar shop-type-avatar1">
+
+                        </div>
+                        <div class="avater-txt">
+                            品牌店
+                            <div class="name-tip">
+                                品牌店指以自有品牌或由商标
+                                权人提供独占授权的品牌入驻
+                                萌地瓜开设的店铺。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex shop-avatar shop-avatar2">
+                        <div class="shop-type-avatar shop-type-avatar2">
+
+                        </div>
+
+                        <div class="avater-txt">
+                            农场主
+                            <div class="name-tip name-tip2">
+                                万千新农人选择的第三方零售平台，
+                                没有中间商压价，直接触达消费者，
+                                打开让农产品走向城市的“绿色通道”
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex shop-avatar">
+                        <div class="shop-type-avatar shop-type-avatar3">
+
+                        </div>
+
+
+                        <div class="avater-txt">
+                            工厂店
+                            <div class="name-tip">
+                                工厂店指以服务类型商标开设且经营
+                                多个品牌的店铺。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="two-bg-box">
+                <div class="two-head-box">
+                    不知道要申请什么类目？
+                </div>
+                <div class="text-box">
+                    若您无法判断所经营商品应该申请萌地瓜哪个类目，您可以通过该入口输入产品名称进行搜索。<br>
+                    温馨提示：该入口展示类目为词语相关推荐类目仅供参考，具体准入要求以萌地瓜对外规则为准。
+                </div>
+            </div>
+
+            <div class="two-bg-box">
+                <div class="two-head-box">
+                    入驻要求
+                </div>
+
+                <div class="flex ">
+                    <div class="menu">
+                        <ul class="menu-ul">
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img menu-img-active"> 服饰
+                            </li>
+                            <li class="menu-li-ul">
+                                <ul class="small-menu-ul">
+                                    <li class="small-menu-li"><a> 女装/女士精品</a></li>
+                                    <li class="small-menu-li"><a>男装</a></li>
+                                    <li class="small-menu-li">女士内衣/男士内衣/家居服</li>
+                                    <li class="small-menu-li">服饰配件/皮带/帽子/围巾</li>
+                                </ul>
+                            </li>
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 母婴
+                            </li>
+                            <li class="menu-li-ul">
+                                <ul class="small-menu-ul">
+                                    <li class="small-menu-li">女装/女士精品</li>
+                                    <li class="small-menu-li">男装</li>
+                                    <li class="small-menu-li">女士内衣/男士内衣/家居服</li>
+                                    <li class="small-menu-li">服饰配件/皮带/帽子/围巾</li>
+                                </ul>
+                            </li>
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 化妆品
+                            </li>
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 食品
+                            </li>
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 3C
+                            </li>
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 运动户外
+                            </li>
+
+
+
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 汽车及配件
+                            </li>
+
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 珠宝配饰
+                            </li>
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 家用电器
+                            </li>
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 居家日用
+                            </li>
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 家装家具家纺
+                            </li>
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 鞋类箱包
+                            </li>
+                            <li class="menu-li" data-show="0">
+                                <img src="./base/images/gather/back.png" alt="加载异常" class="menu-img"> 保健品及医药
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="main-border-line"></div>
+                    <div class="main">
+                        <div class="main-header">
+                            <div class="main-header-circle">
+                                !
+                            </div>
+                            各店铺类型需要准备的资质材料略有不同，请详阅
+                        </div>
+                        <div class="ask-for">
+
+                            一、招商说明
+
+                        </div>
+                        <pre>
+1、“女装/女士精品”类目专卖店、专营店暂停接受入驻；
+2、“女装/女士精品”类目接受指定品牌入驻（点此详见）或自荐品牌入驻；
+3、“女装/女士精品”类目卖场型旗舰店接受自荐品牌入驻，详细要求（点此详见）；
+                    </pre>
+
+                        <!-- <div>
+                            1、“女装/女士精品”类目专卖店、专营店暂停接受入驻；<br>
+                            2、“女装/女士精品”类目接受指定品牌入驻（点此详见）或自荐品牌入驻；<br>
+                            3、“女装/女士精品”类目卖场型旗舰店接受自荐品牌入驻，详细要求（点此详见）；<br>
+                        </div> -->
+                        <div class="select-btns flex-c-c select-margin">
+                            <div class="select-btn select-btn-active">品牌方</div>
+                            <div class="select-line"></div>
+                            <div class="select-btn">农场主</div>
+                            <div class="select-line"></div>
+                            <div class="select-btn">工厂店</div>
+                        </div>
+                        <div class="flex-b-c load-box">
+                            <div class="shop-type flex-s-c">
+                                进口类型：
+
+                                <div class="flex-s-c shop-btn">
+                                    <div class="shop-type-circle" style="display: none;">
+
+                                    </div>
+                                    <img src="./base/images/gather/select.png" alt="加载异常" class="shop-type-img">
+                                    非进口
+                                </div>
+
+
+                                <div class="flex-s-c shop-btn">
+                                    <div class="shop-type-circle">
+
+                                    </div>
+                                    <img style="display: none;" src="./base/images/gather/select.png" alt="加载异常"
+                                        class="shop-type-img">
+                                    进口
+                                </div>
+                            </div>
+
+                            <div class="flex-c-c load-btns">
+                                <a href="http://applying.mengdigua.cn" target="_blank" class="load-a load-btn">立即入住</a>
+                                <a href="" class="load-a load-btn load-btn2">下载全部资质清单</a>
+                            </div>
+                        </div>
+
+                        <table class="table">
+                            <!-- <thead>
+                                <tr class="tr">
+                                    <th class="th" colspan="2">企业资质列表</th>
+                                    <th class="th">详情</th>
+                                </tr>
+                            </thead> -->
+                            <tbody>
+                                <tr class="tr">
+                                    <td></td>
+                                    <td class="th">企业资质列表</td>
+                                    <td class="th">详情</td>
+                                </tr>
+
+
+                                <tr class="tr">
+                                    <td class="td">1</td>
+                                    <td class="td">企业营业执照</td>
+                                    <td class="td">需确保未在企业经营异类名录中且所售商品在营业执照经营范围内</td>
+                                </tr>
+                                <tr class="tr">
+                                    <td class="td">2</td>
+                                    <td class="td">法定代表人身份证正反面</td>
+                                    <td class="td"></td>
+                                </tr>
+                                <tr class="tr">
+                                    <td class="td">3</td>
+                                    <td class="td">联系人身份证正反面</td>
+                                    <td class="td"></td>
+                                </tr>
+                                <tr class="tr">
+                                    <td class="td">4</td>
+                                    <td class="td">一般纳税人资质</td>
+                                    <td class="td">须具备一般纳税人资格</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
+                        <table class="table select-table">
+                            <!-- <thead>
+                                <tr class="tr">
+                                    <th class="th" colspan="2">品牌资质列表</th>
+                                    <th class="th">详情</th>
+                                </tr>
+                            </thead> -->
+                            <tbody>
+                                <tr class="tr">
+                                    <td></td>
+                                    <td class="th">品牌资质列表</td>
+                                    <td class="th">详情</td>
+                                </tr>
+                                <tr class="tr">
+                                    <td class="td">1</td>
+                                    <td class="td">商标注册证或商标注册申请受理通知书</td>
+                                    <td class="td">若办理过变更、转让、续展，请一并提供变更、转让、续展证明或受理通知书；</td>
+                                </tr>
+                                <tr class="tr">
+                                    <td class="td">2</td>
+                                    <td class="td">独占授权书</td>
+                                    <td class="td">1、若由权利人授权开设旗舰店，需提供独占授权书（如果商标权人为自然人，则需同时
+                                        提供其亲笔签名的身份证复印件）。
+                                        2、若商标权人为境内企业或个人，请下载中文版独占授权书。若商标权人为境外企业或
+                                        个人，可选择下载中文版或英文版独占授权书。（如果商标权人为境内自然人，则需同时
+                                        提供其亲笔签名的身份证复印件。如果商标权人为境外自然人，则需同时提供其亲笔签名
+                                        的护照复印件）。
+                                        <a href="./base/word/china-authorization.docx"> 点此下载：中文版独占授权书模板</a>。
+                                        <a href="./base/word/english-authorization.doc">点此下载：英文版独占授权书模板</a>。
+
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <!-- 
+                        <table class="table select-table" style="display: none;">
+                         
+                            <tbody>
+                                <tr class="tr">
+                                    <td class="th">品牌资质列表</td>
+                                    <td class="th">详情</td>
+                                </tr>
+                                <tr class="tr">
+                                    <td class="td">1</td>
+                                    <td class="td">商标注册证或商标注册申请受理通知书</td>
+                                    <td class="td">若办理过变更、转让、续展，请一并提供变更、转让、续展证明或受理通知书；</td>
+                                </tr>
+                                <tr class="tr">
+                                    <td class="td">2</td>
+                                    <td class="td">品牌授权书</td>
+                                    <td class="td"> 商标权人出具的授权书（若商标权人为自然人，则需同时提供其亲笔签名的身份证复印件。
+
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table> -->
+
+
+                        <table class="table exit">
+                            <!-- <thead>
+                                <tr class="tr">
+                                    <th class="th" colspan="2">企业资质列表</th>
+                                    <th class="th">详情</th>
+                                </tr>
+                            </thead> -->
+                            <tbody>
+                                <tr class="tr">
+                                    <td></td>
+                                    <td class="th">企业资质列表</td>
+                                    <td class="th">详情</td>
+                                </tr>
+                                <tr class="tr">
+                                    <td class="td">1</td>
+                                    <td class="td">暂无</td>
+                                    <td class="td"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- 
+                        <table class="table exit" style="display: none;">
+                          
+                            <tbody>
+                                <tr class="tr">
+                                    <td class="th">企业资质列表</td>
+                                    <td class="th">详情</td>
+                                </tr>
+                                <tr class="tr">
+                                    <td class="td">1</td>
+                                    <td class="td">报关单</td>
+                                    <td class="td">1、报关单上应展现对应品牌名称，及商品名称；
+                                        <br>
+                                        2、时间要求见上述招商入驻要求</td>
+                                </tr>
+                            </tbody>
+                        </table> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="footer_root">
+        <div style="padding-top: 28px;padding-bottom: 15px;"><img src="./base/images/foot-logo.png" alt="加载异常"
+                class="foot-logo"></div>
+        <div class="footer_tips flex-c-c">
+            <div class="footer_tip">
+                <a href="http://applying.mengdigua.cn" target="_blank">入驻萌地瓜</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./company.html" target="_blank">关于我们</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./service-center.html" target="_blank"> 帮助中心</a>
+            </div>
+            <div class="footer_line">
+            </div>
+
+            <div class="footer_tip">
+                <a href="./safeguard.html" target="_blank"> 消费者保障</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./report.html" target="_blank"> 廉政举报</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./base/images/permit.jpg" target="_blank" class="footer_a_img"> 营业执照</a>
+            </div>
+
+
+        </div>
+        <div class="footer-bottom">
+            <span> ©2020 萌瓜（浙江）网络科技有限公司 &nbsp;<a
+                href="./base/images/zzdxxk.jpg" target="_blank"
+                rel="noopener noreferrer"> 增值电信业务经营许可证：浙B2-20200976</a>&nbsp; &nbsp;<a href="http://beian.miit.gov.cn/state/outPortal/loginPortal.action"
+                    target="_blank" rel="noopener noreferrer"> 浙ICP备19049378号-5</a></span>
+            &nbsp; &nbsp;<img src="./base/images/foot-public.png" alt="加载异常" class="footer-public"> &nbsp;
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011802001974" target="_blank"
+                rel="noopener noreferrer">浙公网安备 33011802001974号</a> &nbsp;&nbsp;
+                <br>
+                <a href="./base/images/yiyao.png" target="_blank" rel="noopener noreferrer">互联网药品信息服务资格证书：（浙）-经营性-2020-0106</a>&nbsp; &nbsp;
+                <span>浙江省网络食品销售第三方平台提供者备案：浙网食A33000038</span>
+        </div>
+    </footer>
+    <div class="float_window">
+        <a href="./service-center.html" style="display: inline-block; display: flex;
+        justify-content: space-between; align-items: center; height: 385px;">
+            <div class="float_left">
+                服
+                务
+                大
+                厅
+                《
+            </div>
+            <div class="float_right">
+                <div class="float_box">
+                    <img src="./base/images/home/service1.png" alt="" class="float_img">
+                    <div class="float_txt">
+                        招商服务指引
+                    </div>
+                </div>
+                <div class="float_box float-box2">
+                    <img src="./base/images/home/service2.png" alt="" class="float_img">
+                    <div class="float_txt"> 招商入驻问题</div>
+                </div>
+                <div class="float_box">
+                    <img src="./base/images/home/service3.png" alt="" class="float_img">
+                    <div class="float_txt"> 服务讯息</div>
+                </div>
+            </div>
+        </a>
+    </div>
+</body>
+<script src="./base/jquery.min.js"></script>
+<script>
+
+
+    
+    $(function () {
+        var size = 0;
+		//url处理
+		var url = window.location.href;
+		var urlIndex = url.indexOf("?");
+		   
+		var paramObj = {
+		    "category-id": 33, "shop-type": 1, "trade-type": 0
+		};
+		if (urlIndex != -1) {
+		    url = url.slice(0, urlIndex);
+		    console.log(window.location.search)
+		    var urlArr = window.location.search.slice(1).split("&");
+		    for (var i = 0; i < urlArr.length; i++) {
+		        var paramArr = urlArr[i].split("=");
+		        paramObj[paramArr[0]] = paramArr[1]
+		    };
+		}
+        // for (var i = 0; i < $("tbody").length; i++) {
+        //     $("tbody").eq(i).children().eq(0).children().eq(0).attr("colspan", 2);
+        // }
+
+
+
+        /************  单选***************/
+        // var shopIndex = 0;
+        // var selectIndex = 0;
+        $(".shop-btn").click(function (e) {
+            var index = $(".shop-btn").index(e.currentTarget);
+
+            window.location.href = url + "?category-id=" + paramObj["category-id"] + "&shop-type=" + paramObj["shop-type"] + "&trade-type=" + index;
+            // shopBtn(index)
+        })
+
+        function shopBtn(index) {
+            if (index == 1) {
+                $(".shop-type-circle").eq(0).css("display", "block");
+                $(".shop-type-circle").eq(1).css("display", "none");
+                $(".shop-type-img").eq(1).css("display", "block");
+                $(".shop-type-img").eq(0).css("display", "none");
+            }
+            else {
+                $(".shop-type-circle").eq(1).css("display", "block");
+                $(".shop-type-circle").eq(0).css("display", "none");
+                $(".shop-type-img").eq(0).css("display", "block");
+                $(".shop-type-img").eq(1).css("display", "none");
+            }
+            // $(".exit").css("display", "none");
+            // $(".exit").eq(index).css("display", "block")
+        };
+
+        shopBtn(paramObj["trade-type"]);
+        $(".select-btn").removeClass("select-btn-active").eq(paramObj["shop-type"] - 1).addClass("select-btn-active");
+
+
+        $(".select-btn").click(function (e) {
+            var index = $(".select-btn").index(e.currentTarget)*1;
+            window.location.href = url + "?category-id=" + paramObj["category-id"] + "&shop-type=" +( index*1 + 1) + "&trade-type=0";
+        
+            // $(".select-btn").removeClass("select-btn-active").eq(index).addClass("select-btn-active");
+            // if (index >= 2) {
+            //     index = 1
+            // }
+            // $(".select-table").css("display", "none").eq(index).css("display", "block");
+        });
+
+        /*****************************菜单选择********************/
+        var menuIndex = 0;
+        var smallMenuIndex = 0;
+        $(".small-menu-li").removeClass("small-li-active").eq(smallMenuIndex).addClass("small-li-active");
+        if ($(".small-menu-li").children()) {
+            $(".small-menu-li").children().removeClass("small-li-active").eq(smallMenuIndex).addClass("small-li-active");
+        }
+
+
+        $(".menu-li-ul").eq(menuIndex).slideDown();
+
+        $(".small-menu-li").click(function (e) {
+            var index = $(".small-menu-li").index(e.currentTarget);
+            $(".small-menu-li").removeClass("small-li-active").eq(index).addClass("small-li-active");
+            if ($(".small-menu-li").children()) {
+                $(".small-menu-li").children().removeClass("small-li-active").eq(index).addClass("small-li-active");
+            }
+
+            smallMenuIndex = index;
+        });
+
+        var obj = {};
+        obj[menuIndex + ""] = 1
+        $(".menu-li").click(function (e) {
+            var index = $(".menu-li").index(e.currentTarget);
+            //0是隐藏 1是显示
+            if (index == menuIndex) {
+                $(".menu-li-ul").eq(index).slideToggle();
+                $(".menu-img").eq(index).toggleClass("menu-img-active");
+                if (!obj[index + ""]) {
+                    obj[index + ""] = 1
+                }
+                else {
+                    obj[index + ""] = 0
+                };
+            } else {
+                $(".menu-li-ul").slideUp();
+                $(".menu-li-ul").eq(index).slideDown();
+                $(".menu-img").removeClass("menu-img-active").eq(index).addClass("menu-img-active");
+                obj[index + ""] = 1;
+                obj[menuIndex + ""] = 0;
+                menuIndex = index;
+            }
+
+
+        });
+
+
+    })
+</script>
+
+</html>

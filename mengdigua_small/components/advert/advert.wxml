@@ -1,0 +1,20 @@
+<!--components/advert/advert.wxml-->
+<wxs src="../../utils/substr.wxs" module="S1" />
+<view class='advert theme-lg-A-{{theme}}'>
+  <view class='hot-advert theme-bg-C-{{theme}}'>热门公告</view>
+  <view class='roll-box'>
+    <view class='roll-content'>
+      <swiper class='advert-swiper'
+        circular="true"
+        vertical="true"
+        autoplay="{{autoplay}}">
+        <block wx:for="{{listData}}" wx:key="index">
+          <swiper-item catchtouchmove="stopTouchMove" class="swiper-item">
+            <view class='advert-content'>{{ S1.substr(item.title,14) }}</view>
+            <view class='advert-time'>{{ item.time }}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>

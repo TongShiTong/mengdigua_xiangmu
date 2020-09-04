@@ -1,0 +1,68 @@
+<!--components/shopCoupon/shopCoupon.wxml-->
+<!--  -->
+<view style="background:#fff;padding-top:18rpx">
+<view class='flex-row-s  shop-coupon'>
+  <image src='/images/shop/shop-coupon.png' class='coupon-bg' mode="aspectFill"></image>
+  <view class='flex-row-s shop-coupon-attr' catchtap='showCoupon'>
+    <view class='coupon-title'>店铺优惠券</view>
+    <view class='flex-row-f flex-1'>
+      <view wx:for="{{ couponListData.list }}" wx:key="{{ index }}">
+        <view wx:if="{{index<=3}}">
+         <view class='each-coupon' wx:if="{{index<3}}">满{{item.condition_num}}减{{item.discount_num}}</view>
+        <view class='each-coupon' wx:else>...</view>
+        </view>
+       
+      </view>
+    </view>
+    <view class='get-shop-coupon'>领取</view>
+  </view>
+</view>
+</view>
+<!-- 优惠券modal -->
+<view class='mask' catchtouchmove="true" wx:if="{{couponModal}}" catchtap='closeCouponModal'></view>
+<view class='coupon-moadl' wx:if="{{couponModal}}" animation="{{animationData}}">
+  <view class='coupon-content flex-column'>
+    <scroll-view class="scroll" scroll-y="true" bindscrolltolower="loadMoreCoupon">
+      <view class='coupon-title-two'>优惠券</view>
+      <view class='coupon-des'>可领优惠券</view>
+      <view wx:for="{{ couponListData.list }}" wx:key="{{ index }}" class='flex-column-s coupon-item' data-coupon='{{ item }}' bindtap='selectCoupon' data-index='{{ index }}'>
+        <view class='each-content flex-r-b' wx:if="{{item.is_accept==0}}">
+          <view class='coupon-info '>
+            <view class='coupon-info-top flex-r-s-b'>
+              <view class='flex-r-s-b pirce-style'>
+                <view>￥</view>
+                <view class='spe-pirce'>{{item.discount_num}}</view>
+              </view>
+              <view class='use-price'>满{{item.condition_num}}元可用</view>
+            </view>
+            <view class='coupon-info-time'>有效期:{{item.create_time}} - {{item.update_time}}</view>
+          </view>
+          <view class='coupon-type flex-column theme-lg-A-{{theme}}' catchtap='getShopCoupon' id="{{item.id}}">
+            <view>领取</view>
+            <view>店铺优惠卷</view>
+          </view>
+        </view>
+      </view>
+      <view class='coupon-des'>已领取优惠卷</view>
+      <view wx:for="{{ couponListData.list }}" wx:key="{{ index }}" class='flex-column-s coupon-item' data-coupon='{{ item }}' bindtap='selectCoupon' data-index='{{ index }}'>
+        <view class='each-content flex-r-b' wx:if="{{item.is_accept==1}}">
+          <view class='coupon-info '>
+            <view class='coupon-info-top flex-r-s-b'>
+              <view class='flex-r-s-b pirce-style'>
+                <view>￥</view>
+                <view class='spe-pirce'>{{item.discount_num}}</view>
+              </view>
+              <view class='use-price'>满{{item.condition_num}}元可用</view>
+            </view>
+            <view class='coupon-info-time'>有效期:{{item.create_time}} - {{item.update_time}}</view>
+          </view>
+          <view class='coupon-type coupon-type-two flex-column theme-lg-C-{{theme}}'>
+            <view>已领取</view>
+            <view>店铺优惠卷</view>
+          </view>
+
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+{
+  "component": true,
+  "usingComponents": {
+    "modal": "/components/modal/modal",
+    "serch-three": "/components/serchThree/serchThree",
+    "share": "/components/share/share",
+    "advert": "/components/advert/advert",
+    "floor-good": "/components/floorGood/floorGood",
+    "floor-shop": "/components/floorShop/shop",
+    "platform-coupon": "/components/platformCoupon/platformCoupon",
+    "tabbar": "/tabbarComponent/tabbar",
+    "navbar": "/components/navbar/index",
+    "forList": "/components/forList/forList",
+    "look-more": "/components/lookmore/lookmore",
+    "rowscroll": "/components/rowscroll/rowscroll",
+    "page-loding": "/components/pageLoding/pageLoding",
+    "like": "/components/like/like",
+    "custom-horizon": "/components/customHorizon/index",
+    "dual-divide": "/components/dualDivide/index",
+    "shop-coupon":"/components/shopCoupon/shopCoupon"
+  }
+}

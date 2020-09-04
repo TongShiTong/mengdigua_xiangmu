@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="./base/same.css">
+    <link rel="shortcut icon" href="./base/images/logo.png" type="image/x-icon">
+    <style>
+        .banner-img {
+            width: 100%;
+        }
+
+        .box-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.9);
+            margin-bottom: 8px;
+        }
+
+        .box-a {
+            display: inline-block;
+            padding-left: 68px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.6);
+            /* margin-bottom: 8px; */
+        }
+
+        .box-text {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.6);
+            margin-bottom: 8px;
+        }
+
+        .boxs {
+            text-align: center;
+        }
+
+        .box {
+            margin-top: 48px;
+            width: 319px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            display: inline-block\9;
+        }
+
+        .box:first-child+.box {
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            border-left: 1px solid rgb(229, 229, 229)\9;
+            border-right: 1px solid rgb(229, 229, 229)\9;
+            box-sizing: content-box;
+        }
+
+        #app {
+            background-color: white;
+            min-width: 1200px;
+        }
+
+        .box-btn {
+            width: 126px;
+            height: 46px;
+            background: #3d3d3d;
+            opacity: 1;
+            border-radius: 6px;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 500;
+            line-height: 46px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 28px auto;
+            cursor: pointer;
+        }
+
+        .title {
+            display: inline-block;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 30px;
+            color: rgba(0, 0, 0, 0.8);
+            margin: 0 8px;
+        }
+
+        .title-box {
+            margin: 80px 0 32px;
+            text-align: center\9;
+        }
+
+        .line {
+            display: inline-block;
+            vertical-align: middle\9;
+            width: 120px;
+            height: 1px;
+            background: black;
+            opacity: 0.8;
+            filter: alpha(opacity=80)\9;
+        }
+
+        .foot {
+            font-size: 0;
+            margin-bottom: 200px;
+            text-align: center;
+        }
+
+        .foot-box {
+            vertical-align: top\9;
+            display: inline-block\9;
+            width: 300px;
+            height: 309px;
+            background: #f2f2f2;
+            text-align: center;
+            padding-top: 47px;
+            position: relative;
+        }
+
+        .foot-box2 {
+            background: #f7f7f7;
+        }
+
+        .foot-img {
+            margin: 0 auto;
+            width: 60px;
+        }
+
+        .foot-box:nth-of-type(3) .foot-img {
+            width: 50px;
+        }
+
+        .foot-box:nth-of-type(4) .foot-img {
+            width: 58px;
+        }
+
+        .foot-title {
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 27px;
+            opacity: 0.9;
+            margin: 20px 0 10px;
+        }
+
+        .foot-box:nth-of-type(1) .foot-title {
+            color: rgba(239, 43, 43, 1)
+        }
+
+        .foot-box:nth-of-type(2) .foot-title {
+            color: rgba(71, 167, 255, 1);
+        }
+
+        .foot-box:nth-of-type(3) .foot-title {
+            color: rgba(246, 173, 28, 1);
+        }
+
+        .foot-box:nth-of-type(4) .foot-title {
+            color: rgba(67, 216, 30, 1);
+        }
+
+        .foot-tip {
+            width: 20px;
+            position: absolute;
+            top: 140px;
+            right: -10px;
+            height: 20px;
+            display: flex;
+            z-index: 200
+        }
+
+        .foot-tip-img {
+            width: 20px;
+        }
+
+        .foot-txt {
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        /**轮播图**/
+        #play ul,
+        ol {
+            list-style: none;
+        }
+
+        #play {
+            width: 100%;
+            height: 420px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #play #ul {
+            position: absolute;
+        }
+
+        #play #ul li {
+            float: left;
+        }
+
+        #play #ul li img {
+            height: 420px;
+        }
+
+        #play #ol {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+        }
+
+
+        ol li {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: rgb(126, 126, 126);
+
+            /* behavior: url(PIE.htc); */
+            float: left;
+            margin: 5px;
+        }
+
+        #play button {
+            position: absolute;
+            top: 150px;
+            font-size: 50px;
+            display: none;
+            border: none;
+            color: #3d3d3d;
+            background: rgba(0, 0, 0, 0.1);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#19000000, endColorstr=#19000000);
+        }
+
+        #play #prev {
+            left: 10px;
+        }
+
+        #play #next {
+            right: 10px;
+        }
+
+        #ol .bg {
+            background: white;
+        }
+
+        /************************/
+
+
+
+
+        .box-a {
+            display: inline-block;
+            padding-left: 18px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.6);
+            color: rgb(61, 61, 61)\9;
+            /* margin-bottom: 8px; */
+        }
+
+
+
+        .hide {
+            display: none;
+        }
+    </style>
+    <script src="./base/ie/html5shiv.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header-root">
+            <div class="flex-s-c nav-box">
+                <img class="nav-logo" src="./base/images/home/nav-logo.png" alt="加载异常">
+                <div class="header-line"></div>
+                <div class="nav_logo_txt">商家入驻</div>
+            </div>
+            <nav class="nav-root">
+                <ul class="nav-ul flex-s-c">
+                    <li class="nav-li nav-active"><a href="./home.html" class=" nav-a"> 首页</a></li>
+                    <li class="nav-li"><a href="./guide.html" class=" nav-a"> 入驻指南</a></li>
+                    <li class="nav-li"><a href="./ask-for.html" class=" nav-a"> 入驻要求</a></li>
+                    <li class="nav-li"><a href="./expenses.html" class=" nav-a"> 资费标准</a></li>
+                    <li class="nav-li"><a href="./must-see.html" class=" nav-a"> 经营必读</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="play">
+            <ul id="ul">
+                <a href="http://applying.mengdigua.cn" target="_blank" rel="noopener noreferrer"><li><img src="./base/images/home/banner.png"></li></a>
+            </ul>
+            <ol id="ol">
+                <li class="bg"></li>
+
+            </ol>
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
+        </div>
+
+
+        <div class="flex-c-s boxs">
+            <div class="box">
+                <div class="box-title">一张图了解萌瓜入驻</div>
+                <div class="box-text">入驻前先看流程、热招品牌，要求一目了然</div>
+                <!-- <button class="btn box-btn">  -->
+                <a href="./expenses.html" class="box-btn" style="color:white;display: inline-block;">
+
+                    了解流程
+
+                </a>
+                <!-- </botton>  -->
+            </div>
+            <div class="box">
+                <div class="box-title">入驻小帮手</div>
+                <div class="box-text">查一查、入驻材料、资费全知道</div>
+                <!-- <button class="btn box-btn">  -->
+                <a href="./expenses.html" class="box-btn" style="color:white;display: inline-block;">
+                    马上算
+                </a>
+                <!-- </botton> -->
+            </div>
+            <div class="box">
+                <div class="box-title">信息公告</div>
+                <ul>
+                    <a class="box-a" href="#" target="_blank">
+                        <li class="box-text">疫情期间招商专项支持计划公告</li>
+                    </a>
+                    <a class="box-a" href="#" target="_blank">
+                        <li class="box-text">疫情期间招商专项支持计划公告</li>
+                    </a>
+                    <a class="box-a" href="#" target="_blank">
+                        <li class="box-text">疫情期间招商专项支持计划公告</li>
+                    </a>
+                    <a class="box-a" href="#" target="_blank">
+                        <li class="box-text">疫情期间招商专项支持计划公告</li>
+                    </a>
+                </ul>
+
+            </div>
+        </div>
+        <div class="flex-c-c title-box">
+            <div class="line"></div>
+            <div class="title">入驻流程</div>
+            <div class="line"></div>
+        </div>
+        <div class="flex-c-s foot">
+
+
+            <div class="foot-box">
+                <div class="flex-s-c">
+                    <img src="./base/images/home/flow1.png" alt="加载异常" class="foot-img">
+                </div>
+
+                <div class="foot-title">
+                    提交入驻资料
+                </div>
+                <div class="foot-txt">
+                    选择店铺类型/品牌/类目
+                </div>
+                <div class="foot-txt">填写品牌信息</div>
+                <div class="foot-txt">填写企业信息</div>
+                <div class="foot-txt">店铺命名</div>
+                <div class="foot-txt">提交审核</div>
+                <div class="foot-tip">
+                    <img src="./base/images/home/back.png" alt="加载异常" class="foot-tip-img">
+                </div>
+            </div>
+            <div class="foot-box  foot-box2">
+                <div class="flex-s-c">
+
+                    <img src="./base/images/home/flow2.png" alt="加载异常" class="foot-img">
+                </div>
+                <div class="foot-title">
+                    商家等待审核
+                </div>
+
+                <div class="foot-txt">品牌评估</div>
+                <div class="foot-txt">填写企业信息</div>
+                <div class="foot-txt">资质初审</div>
+
+                <div class="foot-tip">
+                    <img src="./base/images/home/back.png" alt="加载异常" class="foot-tip-img">
+                </div>
+            </div>
+            <div class="foot-box">
+                <div class="flex-s-c">
+                    <img src="./base/images/home/flow3.png" alt="加载异常" class="foot-img">
+                </div>
+                <div class="foot-title">
+                    完善店铺信息
+                </div>
+                <div class="foot-txt">
+                    激活商家账号并登录
+                </div>
+                <div class="foot-txt">完成开店前相关任务</div>
+
+                <div class="foot-txt">锁定保证金/缴纳年费</div>
+
+                <div class="foot-tip">
+                    <img src="./base/images/home/back.png" alt="加载异常" class="foot-tip-img">
+                </div>
+            </div>
+            <div class="foot-box foot-box2">
+                <div class="flex-s-c">
+                    <img src="./base/images/home/flow4.png" alt="加载异常" class="foot-img">
+                </div>
+                <div class="foot-title">
+                    开店上架商品
+                </div>
+                <div class="foot-txt">
+                    发布商品
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer class="footer_root">
+            <div style="padding-top: 28px;padding-bottom: 30px;"><img src="./base/images/foot-logo.png" alt="加载异常"
+                    class="foot-logo"></div>
+            <div class="footer_tips flex-c-c">
+                <div class="footer_tip">
+                    <a href="http://applying.mengdigua.cn" target="_blank">入驻萌地瓜</a>
+                </div>
+                <div class="footer_line">
+                </div>
+                <div class="footer_tip">
+                    <a href="./company.html" target="_blank">关于我们</a>
+                </div>
+                <div class="footer_line">
+                </div>
+                <div class="footer_tip">
+                    <a href="./service-center.html" target="_blank"> 帮助中心</a>
+                </div>
+                <div class="footer_line">
+                </div>
+
+                <div class="footer_tip">
+                    <a href="./safeguard.html" target="_blank"> 消费者保障</a>
+                </div>
+                <div class="footer_line">
+                </div>
+                <div class="footer_tip">
+                    <a href="./report.html" target="_blank"> 廉政举报</a>
+                </div>
+                <div class="footer_line">
+                </div>
+                <div class="footer_tip">
+                    <a href="./base/images/permit.jpg" target="_blank" class="footer_a_img"> 营业执照</a>
+                </div>
+
+
+            </div>
+            <div class="footer-bottom">
+                <span> ©2020 萌瓜（浙江）网络科技有限公司 &nbsp;<a
+                    href="./base/images/zzdxxk.jpg" target="_blank"
+                    rel="noopener noreferrer"> 增值电信业务经营许可证：浙B2-20200976</a>&nbsp; &nbsp;<a href="http://beian.miit.gov.cn/state/outPortal/loginPortal.action" target="_blank" rel="noopener noreferrer"> 浙ICP备19049378号-5</a></span>
+                &nbsp; &nbsp;<img src="./base/images/foot-public.png" alt="加载异常" class="footer-public"> &nbsp;
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011802001974"
+                    target="_blank" rel="noopener noreferrer">浙公网安备 33011802001974号</a> &nbsp;&nbsp;
+                    <br>
+                    <!-- <a href="./base/images/yiyao.png" target="_blank" rel="noopener noreferrer">互联网药品信息服务资格证书：（浙）-经营性-2020-0106</a> -->
+                    <span>互联网药品信息服务资格证书：（浙）-经营性-2020-0106</span>&nbsp; &nbsp;
+                    <span>浙江省网络食品销售第三方平台提供者备案：浙网食A33000038</span>
+            </div>
+        </footer>
+
+        <div class="float_window">
+            <a href="./service-center.html" style="display: inline-block; display: flex;
+            justify-content: space-between; align-items: center; height: 385px;">
+                <div class="float_left">
+                    服
+                    务
+                    大
+                    厅
+                    《
+                </div>
+                <div class="float_right">
+                    <div class="float_box">
+                        <img src="./base/images/home/service1.png" alt="" class="float_img">
+                        <div class="float_txt">
+                            招商服务指引
+                        </div>
+                    </div>
+                    <div class="float_box float-box2">
+                        <img src="./base/images/home/service2.png" alt="" class="float_img">
+                        <div class="float_txt"> 招商入驻问题</div>
+                    </div>
+                    <div class="float_box">
+                        <img src="./base/images/home/service3.png" alt="" class="float_img">
+                        <div class="float_txt"> 服务讯息</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+<script src="./base/jquery.min.js"></script>
+<script>
+
+
+    $(function () {
+
+        var i = 0;
+        var imgW = $('#ul img').width();
+        var timer;
+        $(window).resize(function () {
+            $("#ul img").width($("#play").width());
+            $('#ul').append(firstImg).width($('#ul li').length * $('#ul img').width());
+            imgW = $('#ul img').width();
+            $('#ul').stop().animate({
+                left: i * -imgW
+            }, 400);
+        });
+
+
+
+        if ($("#ul img").length > 1) {
+            for(var i=0; i<$("#ul img").length-1;i++){
+                $("#ol").append("<li></li>")
+            }
+            $("#ul img").width($("#play").width());
+            var firstImg = $('#ul li').first().clone();
+            // 添加到最后的位置 并设置 ul 的宽度
+            $('#ul').append(firstImg).width($('#ul li').length * $('#ul img').width());
+
+
+
+            // 下一张
+            $('#next').click(function () {
+                moveImg(++i);
+            });
+
+            // 上一张
+            $('#prev').click(function () {
+                moveImg(--i);
+            });
+
+            // 移动到指定的图片
+            function moveImg() {
+                // alert(num);
+
+                // 最后一张
+                if (i == $('#ul li').length) {
+                    $('#ul').css({
+                        left: 0
+                    })
+                    i = 1;
+                }
+
+                // 是第一张的时候			
+                if (i == -1) {
+                    i = $('#ul li').length - 2;
+                    $('#ul').css({
+                        left: ($('#ul li').length - 1) * -800
+                    });
+                }
+
+                // 移动图片动画
+                $('#ul').stop().animate({
+                    left: i * -imgW
+                }, 400);
+                // console.log(i);
+                // // 换一下每个图片的小标记
+                if (i == ($('#ul li').length - 1)) {
+                    $('#ol li').eq(0).addClass('bg').siblings().removeClass('bg');
+                } else {
+                    $('#ol li').eq(i).addClass('bg').siblings().removeClass('bg');
+                }
+            }
+
+
+            // 点击小图片，跳转到指定的图片
+            $('#ol li').click(function () {
+                i = $(this).index();
+                moveImg();
+            });
+
+
+            function autoPlay() {
+                timer = setInterval(function () {
+                    i++;
+                    moveImg();
+                }, 3000);
+            }
+
+            autoPlay();
+
+            // 鼠标移入幻灯片清除定时器
+            $('#play').mouseover(function () {
+                $('#play button').show();
+                clearInterval(timer)
+            }).mouseout(function () {
+                // 鼠标离开重新播放
+                autoPlay();
+                $('#play button').hide();
+            })
+
+        }
+
+
+    })
+</script>
+
+</html>

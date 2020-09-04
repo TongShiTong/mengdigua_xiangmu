@@ -1,0 +1,97 @@
+/* pages/center/userInfo/changePhone/changePhone.wxss */
+/* 验证旧手机 */
+.tip {
+  height: 70rpx;
+  background-color: #FFF6DF;
+  text-align: center;
+  line-height: 70rpx;
+  color: #D66628;
+}
+.now-phone {
+  background-color: #fff;
+  padding: 40rpx 30rpx 20rpx 30rpx;
+  font-weight: 700;
+  color: #000000;
+}
+.phone-tip {
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 20rpx;
+}
+/* 新手机 */
+.new-phone {
+  margin-top: 20rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+.input-item {
+  background-color: #fff;
+  height: 100rpx;
+  padding-bottom: 20rpx;
+}
+.code-item {
+  width: 690rpx;
+  margin: 0 30rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #EEEEEE
+}
+.code-wrap {
+  padding-bottom: 20rpx;
+  background-color: #fff;
+}
+.input-wrap {
+  width: 690rpx;
+  border-radius: 10rpx;
+  border-bottom: 1px solid #EEEEEE;
+  height: 100%;
+  margin: 0 auto;
+}
+.input {
+  height: 100%;
+}
+.save {
+  margin-top: 60rpx;
+}
+.get-code {
+  width:186rpx;
+  height:66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  background:#F6F6F7;
+  border-radius:8rpx;
+  color: #333333;
+  font-size: 30rpx;
+}
+.input-text {
+  color: #1F1F1F;
+}
+.input-code-wrap {
+  border-radius: 10rpx;
+  height: 80rpx;
+}
+.input-code {
+  width: 420rpx;
+  height: 100%;
+}
+.save-btn {
+  margin: 60rpx auto 0;
+  width:686rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  background:linear-gradient(270deg,rgba(62,64,66,1) 0%,rgba(29,30,31,1) 100%);
+  border-radius:8rpx;
+}
+.good-img{
+  width: 250rpx;
+}
+.input-title{
+  padding-top: 32rpx;
+  padding-left: 32rpx;
+  height:28rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(1,0,1,1);
+  line-height:28rpx;
+}

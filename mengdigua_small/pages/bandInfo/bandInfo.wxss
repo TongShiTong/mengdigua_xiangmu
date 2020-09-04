@@ -1,0 +1,38 @@
+/* pages/bandInfo/bandInfo.wxss */
+
+.image-bg{
+  position: absolute;
+  width: 100%;
+}
+
+.confirm-text {
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 100rpx;
+  width: 322rpx;
+  height: 80rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 40rpx;
+  border: 2rpx solid rgba(228, 228, 228, 1);
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 80rpx;
+}
+
+.page-total {
+  position: relative;
+  width: 100%;
+  background: #fff;
+}
+
+.image-icon{
+  width: 42rpx;
+  margin-right: 14rpx;
+}
+.button-text{
+  width: 100%;
+  position: absolute;
+  bottom: 30rpx;
+  text-align: center
+
+}

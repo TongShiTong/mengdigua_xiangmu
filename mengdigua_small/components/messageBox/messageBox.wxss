@@ -1,0 +1,75 @@
+/* components/messageBox/messageBox.wxss */
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 11111;
+}
+.message-box {
+  width: 540rpx;
+  height: 350rpx;
+  background:rgba(252,252,252,1);
+  border-radius: 10rpx;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 11111;
+}
+.message-top {
+  height: 100rpx;
+  text-align: center;
+  color: #030303;
+  position: relative;
+}
+.title {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 700;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.sub-title {
+  color: #555555;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.message-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  border-top: 1px solid #EEEEEE;
+}
+.message-text {
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.button-comfirm{
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  padding: 0;
+  color: #C40E02;
+  line-height: 100rpx;
+  font-size: 32rpx;
+}
+.confirm {
+  font-size: 32rpx;
+  color: #C40E02;
+}
+.cancel {
+  font-size: 32rpx;
+  color: #666666;
+  border-right: 1px solid #EEEEEE;
+}

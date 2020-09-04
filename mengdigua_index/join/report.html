@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>廉政举报</title>
+    <link rel="stylesheet" href="./base/same.css">
+    <link rel="shortcut icon" href="./base/images/logo.png" type="image/x-icon">
+    <style>
+        #app {
+            background: #F9F9F9;
+            padding-bottom: 62px;
+        }
+
+        .txts {
+            width: 1200px;
+            height: 364px;
+            background: rgba(255, 255, 255, 0.5);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#dfffffff, endColorstr=#dfffffff);
+            box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.08);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: rgba(0, 0, 0, 0.9);
+            margin: 40px auto;
+            padding: 30px 25px 30px 24px;
+        }
+
+        .txt-title {
+            font-size: 20px;
+            text-align: center;
+            font-weight: 500;
+            line-height: 27px;
+        }
+
+        .txt-tip {
+            font-weight: 500;
+            text-align: left;
+            margin: 30px 0 11px;
+        }
+
+        .txt {
+            margin-left: 33px;
+        }
+
+        #form {
+            width: 1200px;
+            background: white;
+            font-size: 18px;
+            margin: 0 auto;
+            font-weight: 400;
+            line-height: 25px;
+            color: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            padding: 24px 24px 60px;
+        }
+
+        .remmber {
+            display: none;
+            display: inline-block\9;
+        }
+
+        .radio {
+            margin-right: 2px;
+            display: none\9;
+            /* background-color: tomato; */
+        }
+
+
+        .remmber:checked+.radio {
+            background-image: url("./base/images/gather/select.png");
+            background-size: 100% 100%;
+            border: none;
+        }
+
+        .form-title {
+            font-size: 20px;
+            margin-bottom: 24px;
+            font-weight: 500;
+            line-height: 27px;
+            color: #3d3d3d;
+
+        }
+
+        .form-tip {
+            display: inline-block\9;
+            width: 166px;
+            flex-grow: 0;
+            padding-right: 20px;
+            text-align: right;
+        }
+
+        .section {
+            margin: 20px 0px;
+        }
+
+        .line {
+            display: inline-block;
+            width: 3px;
+            height: 20px;
+            background: rgba(61, 61, 61, 1);
+            margin-right: 8px;
+            border-radius: 6px;
+            position: relative;
+            top: 3px;
+        }
+
+        .select-input {
+            width: 300px;
+            height: 50px;
+            height: 20px\9;
+            opacity: 1;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 50px;
+            color: rgba(0, 0, 0, 0.6);
+            border: none;
+            padding-left: 20px;
+            cursor: pointer;
+            -ms-appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            background: url("./base/images/gather/btn.png") no-repeat scroll 270px center transparent;
+            background: none\9;
+            -ms-background: none;
+            background-color: #F7F7F7;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        .section option {
+            background: rgba(255, 255, 255, 1);
+        }
+
+
+        .red {
+            color: red;
+            margin-left: 20px;
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 28px;
+        }
+
+        #textarea {
+            vertical-align: top\9;
+            width: 700px;
+            height: 120px;
+            background: #f7f7f7;
+            opacity: 1;
+            border-radius: 4px;
+            border: none;
+            resize: none;
+            font-size: 14px;
+            line-height: 20px;
+            padding: 10px 20px;
+            text-align: center;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        #pic {
+            display: none;
+            display: inline-block\9;
+        }
+
+        #file-btn {
+            display: inline-block\9;
+            width: 100px;
+            height: 40px;
+            width: 290px\9;
+            height: auto\9;
+            background: #6481FC;
+            background: transparent\9;
+            border-radius: 6px;
+            font-size: 14px;
+            text-align: center;
+            font-weight: bold;
+            line-height: 40px;
+            color: white;
+        }
+
+
+        .form-txt {
+            font-size: 14px;
+            margin-left: 167px;
+            font-weight: 400;
+            line-height: 20px;
+            color: black;
+        }
+
+        .input-txt {
+            width: 450px;
+            height: 50px;
+            background: #f7f7f7;
+            opacity: 1;
+            border-radius: 4px;
+            border: none;
+            font-size: 14px;
+            padding-left: 20px;
+            font-weight: 400;
+            line-height: 20px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .code {
+            width: 280px;
+            height: 50px;
+
+            opacity: 1;
+            border: none;
+            /* border: 1px solid rgba(0, 0, 0, 0.6); */
+            border: 1px solid #b2b2b2;
+            border-radius: 4px;
+            font-size: 14px;
+            padding-left: 20px;
+            font-weight: 400;
+            line-height: 20px;
+            color: rgba(0, 0, 0, 0.6);
+            color: black\9;
+            filter: alpha(opacity=60)\9;
+        }
+
+        .code-btn {
+            vertical-align: top;
+            display: inline-block\9;
+            width: 150px;
+            height: 50px;
+            background: #F7F7F7;
+            opacity: 1;
+            border-radius: 4px;
+            font-size: 14px;
+            text-align: center;
+            font-weight: 500;
+            line-height: 50px;
+            color: rgba(0, 0, 0, 0.6);
+            color: black\9;
+            filter: alpha(opacity=90)\9;
+            margin-left: 20px;
+
+        }
+
+        .form-btn {
+            width: 180px;
+            height: 50px;
+            background: rgb(100, 129, 252);
+            opacity: 1;
+            border-radius: 4px;
+            margin-top: 60px;
+            font-size: 18px;
+            text-align: center;
+            font-weight: 400;
+            line-height: 50px;
+            color: white;
+            border: none;
+        }
+    </style>
+    <script src="./base/ie/html5shiv.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header-root">
+            <div class="flex-s-c nav-box">
+                <img class="nav-logo" src="./base/images/home/nav-logo.png" alt="加载异常">
+                <div class="header-line"></div>
+                <div class="nav_logo_txt">商家入驻</div>
+            </div>
+            <nav class="nav-root">
+                <ul class="nav-ul flex-s-c">
+                    <li class="nav-li">
+                        <!-- <a href="#" class=" nav-a">    -->
+                        廉政举报
+                        <!-- </a> -->
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="txts">
+            <div class="txt-title">廉政举报</div>
+            <div class="txt-tip">
+                廉正举报须知：
+            </div>
+            <div class="txt">
+                萌地瓜致力于打造公开、透明、开放的商业生态，我们对于任何腐败的行为将予以坚决打击。<br>
+                萌地瓜总部受理以下涉及员工违纪的举报：<br>
+                （1）索取、收受贿赂；违规收受礼品或款待；<br>
+                （2）违规投资、就职于萌地瓜供应商、商家、合作伙伴等；<br>
+                （3）泄露公司保密信息等；<br>
+                （4）利用职权谋取私利；<br>
+                （5）其他违反法律法规、公司制度的行为。<br>
+                我们希望您采取实名举报或提供可以联系到您的联系方式，以便专人保持联络，我们承诺会按照专业的做法，严格保护举报人，并对举报内容严格保密。举报内容
+                必须客观真实。对于立案调查并有结论的举报，我们会根据您留下的联系方式进行反馈。
+            </div>
+        </div>
+
+
+        <form id="form" action="" method="POST" enctype="multipart/form-data">
+            <div class="form-title">
+                <div class="line"></div> 举报信息
+            </div>
+            <section class="flex-s-c section">
+                <div class="form-tip">
+                    举报对象
+                </div>
+
+                <label class="flex-s-c">
+
+                    <input class="remmber" name="reportObj" type="radio" value="员工" checked />
+                    <div class="shop-type-circle radio">
+                    </div>
+
+                    员工
+                </label>
+                <label class="flex-s-c" style="margin-left: 25px;">
+
+                    <input class="remmber" name="reportObj" type="radio" value=" 商家" />
+                    <div class="shop-type-circle radio">
+                    </div>
+                    商家
+                </label>
+            </section>
+            <section class="section flex-s-c">
+
+                <div class="form-tip"> 举报主题
+                </div>
+                <select required class="select-input" name="report-theme">
+                    <option value="" style="display: none;" disabled selected>请选择举报主题</option>
+                    <option>索取、收受贿赂</option>
+                    <option>利用职权谋私利</option>
+                    <option>泄露公司保密信息</option>
+                    <option>违反法律法规、公司制度</option>
+                </select>
+
+                <span class="red">*</span>
+            </section>
+            <section class="section flex">
+                <div class="form-tip"> 举报内容 </div>
+                <textarea name="report-content" id="textarea" maxlength="200"></textarea>
+
+
+                <span class="red">*</span>
+            </section>
+
+            <section class="section flex">
+                <div class="form-tip"> 添加附件 </div> <label id="file-btn"><input type="file" multiple name="pic" id="pic"
+                        accept=".doc,.docx,.xlsx,.xls,.rar,.zip,.png,.jpeg,.jpng" />上传附件 </label>
+                <span class="red">*</span>
+                <!-- image/png,image/jpg, -->
+            </section>
+            <div class="form-txt">
+                最多上传9个文件，每个文件大小不超过10M
+            </div>
+            <div class="form-txt">
+                可上传格式为jpg、png、jpeg、doc、xls、xlsx、docx、zip、rar等格式
+            </div>
+
+            <div style="height:1px;
+          border:1px solid rgba(61,61,61,1);
+          opacity:0.2;margin:20px 0 19px"></div>
+            <div class="form-title">
+                <div class="line"></div>举报人信息
+            </div>
+            <section class="section flex-s-c">
+                <div class="form-tip"> 姓名 </div>
+                <input type="text" name="name" class="input-txt" placeholder="请输入举报人姓名" required>
+                <span class="red">*</span>
+            </section>
+            <section class="section  flex-s-c">
+                <div class="form-tip"> 手机 </div>
+                <input type="text" name="phone" id="phone" class="input-txt" placeholder="请输入举报人手机号" maxlength="11"
+                    required>
+                <span class="red">*</span>
+            </section>
+            <section class="section  flex-s-c">
+                <div class="form-tip"> 验证码 </div>
+                <input type="text" name="code" class="code" placeholder="请输入验证码" required>
+                <div class="code-btn">
+                    获取验证码
+                </div>
+            </section>
+            <section class="section  flex-s-c">
+                <div class="form-tip"> 邮箱 </div>
+                <input type="email" name="user_email" class="input-txt" placeholder="请输入举报人邮箱" required>
+                <span class="red">*</span>
+            </section>
+            <div style="text-align: center;">
+                <button class="form-btn">提交</button>
+            </div>
+
+        </form>
+
+    </div>
+    <footer class="footer_root">
+        <div style="padding-top: 28px;padding-bottom: 15px;"><img src="./base/images/foot-logo.png" alt="加载异常"
+                class="foot-logo"></div>
+        <div class="footer_tips flex-c-c">
+            <div class="footer_tip">
+                <a href="http://applying.mengdigua.cn" target="_blank">入驻萌地瓜</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./company.html" target="_blank">关于我们</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./service-center.html" target="_blank"> 帮助中心</a>
+            </div>
+            <div class="footer_line">
+            </div>
+
+            <div class="footer_tip">
+                <a href="./safeguard.html" target="_blank"> 消费者保障</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./report.html" target="_blank"> 廉政举报</a>
+            </div>
+            <div class="footer_line">
+            </div>
+            <div class="footer_tip">
+                <a href="./base/images/permit.jpg" target="_blank" class="footer_a_img"> 营业执照</a>
+            </div>
+
+
+        </div>
+        <div class="footer-bottom">
+            <span> ©2020 萌瓜（浙江）网络科技有限公司 &nbsp;<a
+                href="./base/images/zzdxxk.jpg" target="_blank"
+                rel="noopener noreferrer"> 增值电信业务经营许可证：浙B2-20200976</a>&nbsp; &nbsp;<a href="http://beian.miit.gov.cn/state/outPortal/loginPortal.action" target="_blank" rel="noopener noreferrer"> 浙ICP备19049378号-5</a></span>
+            &nbsp; &nbsp;<img src="./base/images/foot-public.png" alt="加载异常" class="footer-public"> &nbsp;
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011802001974"
+                target="_blank" rel="noopener noreferrer">浙公网安备 33011802001974号</a> &nbsp;&nbsp;
+                <br>
+                <!-- <a href="./base/images/yiyao.png" target="_blank" rel="noopener noreferrer">互联网药品信息服务资格证书：（浙）-经营性-2020-0106</a> -->
+                <span>互联网药品信息服务资格证书：（浙）-经营性-2020-0106</span>&nbsp; &nbsp;
+                <span>浙江省网络食品销售第三方平台提供者备案：浙网食A33000038</span>
+        </div>
+    </footer>
+</body>
+<script src="./base/jquery.min.js"></script>
+<script>
+
+
+    $(function () {
+        var timer = null;
+        time = 60;
+        codeTip = "获取验证码";
+        function makeTimer() {
+            time = 60;
+            codeTip = time;
+
+            timer = setInterval(function () {
+                time -= 1;
+                codeTip = time;
+                if (time <= 0) {
+                    clearInterval(timer);
+                }
+            }, 1000);
+        }
+
+
+
+        $("#phone").blur(function () {
+            var phoneBool = /^1[356789]\d{9}$/.test($("#phone").val());
+            if(!phoneBool){
+                $("#phone").css({border:"1px solid red"})
+            }
+        });
+        // $("#phone").(function(){
+        //     $("#phone").css({border:"none"})
+        // })
+
+
+
+        $("#pic").change(function (e) {
+            var file = $("#pic")[0].files
+            console.log(file)
+            if (file.length > 9) {
+
+                // $("#pic")[0].attributes("files",[])
+                alert("最多上传9个文件,请重新上传");
+                return
+            }
+        })
+        $('form').submit(function (e) {
+            e.preventDefault();
+            var file = $("#pic")[0].files;
+
+            // console.log(file)
+            // console.log("1111111111112");
+            // console.log(this)
+            // console.log($("#form").serializeArray())
+            //输出以数组形式序列化表单值的结果：
+        });
+
+
+
+
+    })
+</script>
+
+</html>

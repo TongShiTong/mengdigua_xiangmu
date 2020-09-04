@@ -1,0 +1,23 @@
+/* pages/center/userInfo/changeName/changeName.wxss */
+.nickname {
+  background-color: #fff;
+  padding: 30rpx;
+}
+.input {
+  border-bottom: 1px solid #EEEEEE;
+  padding-bottom: 20rpx;
+}
+.input-place {
+  color: #999999;
+}
+.btn {
+  margin: 60rpx auto 0;
+  width:688rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  background:linear-gradient(270deg,rgba(62,64,66,1) 0%,rgba(29,30,31,1) 100%);
+  border-radius:8rpx;
+}

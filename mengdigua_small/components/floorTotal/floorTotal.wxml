@@ -1,0 +1,300 @@
+<scroll-view
+ class="scroll-load-panel index-scroll {{!isIphoneX?'index-scroll-two':''}} {{marginTop?'class-margin':''}}"
+ scroll-y="{{scrollY}}"
+ style="display:{{show?'block':'none'}};height:{{pageHeight}}px"
+ scroll-into-view="{{ toView }}"
+ bindscrolltolower="addMore"
+ enable-back-to-top="true"
+ enable-flex="true"
+>
+	<!-- 楼层 -->
+	<view class='floor-content'>
+		<view
+		 class='{{ item.type ==5?"floor-item":"" }}'
+		 wx:for='{{ floorData.content.list }}'
+		 wx:key="index"
+		 style="margin-top:{{ item.top*2+'rpx'}};margin-bottom:{{ item.bottom*2+'rpx'}}"
+		>
+			<!-- banner -->
+			<block wx:if="{{index<showindexlast}}">
+				<view class='banner-wrap' wx:if="{{ item.type == 2 }}">
+					<swiper
+					 class='swiper'
+					 indicator-dots="{{indicatorDots}}"
+					 indicator-active-color="#fff"
+					 circular="true"
+					 autoplay="true"
+					 interval="3000"
+					>
+						<block
+						 wx:for="{{ item.floor_data }}"
+						 wx:key="bannerIndex"
+						 wx:for-index="bannerIndex"
+						 wx:for-item="bannerItem"
+						>
+							<swiper-item
+							 bindtap="tapFloor"
+							 class="back-swiper"
+							 data-type="{{ bannerItem.type }}"
+							 data-param="{{ bannerItem.param }}"
+							>
+								<image
+								 src="{{ bannerItem.img_url }}"
+								 lazy-load="true"
+								 class="slide-image"
+								 mode="aspectFill"
+								/>
+								<!-- <view class="slide-image" style='background-image: url({{ bannerItem.img_url }});background-size:100% 100%;'></view> -->
+							</swiper-item>
+						</block>
+					</swiper>
+				</view>
+				<!-- 导航 -->
+				<view class='flex-row-f nav' wx:if="{{ item.type == 4 }}">
+					<view
+					 class='column flex-column flex-1'
+					 wx:for="{{ item.floor_data }}"
+					 wx:key="navIndex"
+					 wx:for-index="navIndex"
+					 wx:for-item="navItem"
+					 bindtap='tapFloor'
+					 data-type="{{ navItem.type }}"
+					 data-title="{{ navItem.title }}"
+					 data-param="{{ navItem.param }}"
+					>
+						<image
+						 src="{{ navItem.img_url }}"
+						 class="nav-img"
+						 mode="aspectFill"
+						 lazy-load="true"
+						/>
+						<view class='nav-title'>{{ navItem.title }}</view>
+					</view>
+
+				</view>
+				<!-- 热门公告 -->
+				<view wx:if="{{ item.type == 3 }}">
+					<advert listData="{{ item.floor_data }}" />
+				</view>
+				<view
+				 wx:if="{{ item.type == 5 }}"
+				 class='floor'
+				 wx:for="{{ item.floor_data }}"
+				 wx:key="navIndex"
+				 wx:for-index="navIndex"
+				 wx:for-item="navItem"
+				 bindtap='tapFloor'
+				 data-type="{{ navItem.type }}"
+				 data-param="{{ navItem.param }}"
+				>
+					<image
+					 src="{{ navItem.img_url }}"
+					 class="good-img"
+					 mode="widthFix"
+					 lazy-load="true"
+					/>
+				</view>
+				<!-- 热门商品 -->
+				<floor-good
+				 title="热门商品"
+				 wx:if="{{ item.type == 6 && hotData !='' }}"
+				 listData="{{ hotData }}"
+				 role="{{ userInfo.role }}"
+				 bind:jumpDetail="jumpDetail"
+				 goType="isHot"
+				/>
+				<!-- 新品推荐 -->
+				<floor-good
+				 title="新品推荐"
+				 wx:if="{{ item.type == 7 && newData !='' }}"
+				 listData="{{ newData }}"
+				 role="{{ userInfo.role }}"
+				 bind:jumpDetail="jumpDetail"
+				 goType='isNew'
+				/>
+				<!-- 店铺 -->
+				<floor-shop title="推荐店铺" wx:if="{{ item.type == 8 && comData != '' }}" listData="{{ comData.list }}" />
+				<!-- 秒杀场次 -->
+				<view wx:if="{{ item.type == 9|| item.type == 13 }}" id='skillView'>
+					<look-more
+					 class="look-more"
+					 title='{{item.title}}'
+					 url="/pages/assemble/index?type=2"
+					 lookMore="true"
+					 bgColor='#fff'
+					 showType="2"
+					/>
+					<!-- class='{{spikeFixed?"spike-fixed":""}}' -->
+					<view style='top:{{barHeight+100+3}}px'>
+						<scroll-view class='scroll-load-x flex-row skill-scroll ' scroll-x="true">
+							<view class='skill-tab skill-tab2 flex-column {{ skillContentIndex == 0?"theme-lg-A-"+theme:"" }}' bindtap='slectSkillContent' data-index='0'>
+								<view class='skill-time {{ skillContentIndex == 0?"skill-title-two":"" }}'>昨日精选</view>
+								<view class='skill-title {{ skillContentIndex == 0?"skill-title-two":"" }}'>已结束</view>
+								<!-- <view class='skill-line theme-lg-A-{{theme}}' wx:if="{{ skillContentIndex == 0 }}"></view> -->
+							</view>
+							<view
+							 class='skill-tab skill-tab2 {{ skillIndex == index?"theme-lg-A-"+theme:"" }}'
+							 wx:for="{{ skillData.list }}"
+							 wx:key="index"
+							 bindtap='selectSkill'
+							 data-index='{{ index }}'
+							 data-code='{{ item.seckill_scene_id }}'
+							>
+								<view class='skill-time {{ skillIndex == index?"skill-title-two":"" }}'>{{ item.s_time }}</view>
+								<view class='skill-title {{ skillIndex == index?"skill-title-two":"" }}'>
+									<text>{{item.status == 0?'即将开始':item.status == 1?'正在秒杀':'已结束'}}</text>
+								</view>
+								<!-- <view class='skill-title {{ skillIndex == index?"theme-color-A-"+theme:"" }}' wx:if="{{ item.status == 1 }}">正在秒杀</view>
+                  <view class='skill-title {{ skillIndex == index?"theme-color-A-"+theme:"" }}' wx:elif="{{ item.status == 2 }}">已结束</view> -->
+								<!-- <view class='skill-line theme-lg-A-{{theme}}' wx:if="{{ skillIndex == index }}"></view> -->
+							</view>
+							<view class='skill-tab skill-tab2 flex-column {{ skillContentIndex == 1?"theme-lg-A-"+theme:"" }}' bindtap='slectSkillContent' data-index='1'>
+								<view class='skill-time {{ skillContentIndex == 1?"skill-title-two":"" }}'>明日预告</view>
+								<view class='skill-title {{ skillContentIndex == 1?"skill-title-two":"" }}'>敬请期待</view>
+								<!-- <view class='skill-line theme-lg-A-{{theme}}' wx:if="{{ skillContentIndex == 1 }}"></view> -->
+							</view>
+						</scroll-view>
+					</view>
+					<view class='bg1' />
+					<!-- <view wx:if="{{spikeFixed}}" style='height:130rpx;'>
+            </view> -->
+					<view wx:if="{{ skillContentIndex == 0||skillContentIndex == 1 }}">
+						<view>
+							<view wx:if="{{item.type == 9}}">
+								<forList
+								 list="{{skillContentIndex == 0?yesterdayData.list:skillContentIndex == 1?tomorrowData.list:''}}"
+								 showType="1"
+								 skillType='1'
+								 userInfo="{{userInfo}}"
+								/>
+							</view>
+							<view style='background:#fff;padding:40rpx 0 40rpx 32rpx;' wx:if="{{item.type == 13}}">
+								<rowscroll list="{{skillContentIndex == 0?yesterdayData.list:skillContentIndex == 1?tomorrowData.list:''}}" showType="skill" userInfo="{{userInfo}}" />
+								<view class='bg1' />
+							</view>
+						</view>
+					</view>
+
+					<view wx:else>
+						<view>
+							<view wx:if="{{item.type == 9}}">
+								<forList
+								 list="{{listData.list}}"
+								 showType="1"
+								 skillType='1'
+								 userInfo="{{userInfo}}"
+								/>
+							</view>
+							<view style='background:#fff;padding:40rpx 0 40rpx 32rpx;' wx:if="{{item.type == 13}}">
+								<rowscroll list="{{listData.list}}" showType="skill" userInfo="{{userInfo}}" />
+							</view>
+						</view>
+					</view>
+				</view>
+				<!-- 拼团 -->
+				<view style='width:100%' wx:if="{{ item.type == 12||item.type == 14 }}">
+					<look-more
+					 class="look-more"
+					 title='{{item.title}}'
+					 url="/pages/assemble/index"
+					 lookMore="true"
+					 bgColor='#fff'
+					 showType="2"
+					 showIcon="group"
+					/>
+					<view class='group-top-scroll flex-column'>
+						<rowscroll
+						 style="width:100%;"
+						 list="{{groundTimes.list}}"
+						 activeShow="groupIndex"
+						 showType="nav"
+						 userInfo="{{userInfo}}"
+						 bind:navChange="changeGroupTop"
+						/>
+					</view>
+
+					<view wx:if="{{item.type == 12}}">
+						<forList
+						 bind:statusChange="changeList"
+						 groupType='2'
+						 list="{{groupList.list}}"
+						 showType="1"
+						 userInfo="{{userInfo}}"
+						 newList="{{newList}}"
+						/>
+					</view>
+					<view style='background:#fff;padding:40rpx 0 40rpx 32rpx;' wx:if="{{item.type == 14}}">
+						<rowscroll
+						 groupType='2'
+						 list="{{groupList.list}}"
+						 showType="skill"
+						 userInfo="{{userInfo}}"
+						/>
+					</view>
+					<view/>
+				</view>
+
+				<!-- 砍价 -->
+				<block wx:if="{{ item.type == 15||item.type == 16 }}">
+					<look-more
+					 class="look-more"
+					 title='{{item.title}}'
+					 url="/pages/index/bargain/bargain"
+					 lookMore="true"
+					 bgColor='#fff'
+					 showType="2"
+					 showIcon="bargain"
+					/>
+					<block wx:if="{{item.type == 15}}">
+						<floor-good
+						 title="{{ item.title }}"
+						 listData="{{bargainList}}"
+						 showType="2"
+						 role="{{ userInfo.role }}"
+						 bind:jumpDetail="jumpDetail"
+						/>
+					</block>
+
+					<view wx:if="{{ item.type == 16 }}" style="padding:0 40rpx;background:#fff;">
+						<rowscroll list="{{bargainList.list}}" showType="bargain" userInfo="{{userInfo}}" />
+						<view class='bg1' />
+					</view>
+				</block>
+
+				<!-- 自定义列表 -->
+				<floor-good
+				 title="{{ item.title }}"
+				 wx:if="{{ item.type == 10&&cuscomData[index]  }}"
+				 listData="{{cuscomData[index]}}"
+				 role="{{ userInfo.role }}"
+				 bind:jumpDetail="jumpDetail"
+         showList='2'
+				/>
+
+        <!-- 商品横向 type=17 -->
+        <custom-horizon
+          wx:if="{{item.type == 17}}" 
+          showType='2'
+          listData='{{horizonList.list}}'/>
+        <!-- 半屏模块 type=18 -->
+        <view></view>
+        <dual-divide 
+          wx:if="{{item.type == 18}}" 
+          listData="{{item.floor_data}}"
+          seckillScene="{{skillData}}"
+          bind:tapFloor='tapFloor'/>
+
+        <!-- 优惠券板块 -->
+        <shop-coupon 
+          wx:if="{{item.type == 11}}"
+          couponListData="{{couponListData}}"
+          bind:loadNew='getCouponeList'
+          bind:loadMoreCoupon="loadMoreCoupon"
+          catchtouchmove="true"/>
+
+          
+			</block>
+		</view>
+	</view>
+</scroll-view>
+

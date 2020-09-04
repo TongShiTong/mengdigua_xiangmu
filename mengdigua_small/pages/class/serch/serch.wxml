@@ -1,0 +1,61 @@
+<!--pages/class/serch/serch.wxml-->
+<wxs src="../../../utils/substr.wxs" module="S1" />
+<!--  -->
+<block wx:if="{{theme || theme===0}}">
+
+  <navbar title="搜索" />
+  <view>
+    <serch-two serchValue="{{ serchValue }}" bind:changeValue="changeValue" bind:serch="serch"></serch-two>
+  </view>
+  <!--  -->
+  <view 
+    class='hot-serch' 
+    style="margin-top:{{barHeight+75}}px"
+    wx:if="{{ listData == '' }}">
+    <view class='flex-row-s ' style='padding-top:32rpx;'>
+      <view class='hot-text' >历史搜索</view>
+      <image bindtap='clearLabel' wx:if="{{ label != '' }}" src="/images/class/delete.png" class='delete-img' mode="aspectFill"></image>
+    </view>
+    
+    <view 
+      class='serch-label flex-row-f'
+      wx:if="{{label != ''}}">
+      <view class='label' wx:for="{{ label }}" wx:key="{{ index }}" data-value='{{ item }}' bindtap='selectLabel'>{{ item }}</view>
+    </view>
+    <view 
+      wx:else
+      class="hurry-search">赶快去搜索心仪商品吧</view>
+    <view class='flex-row-s' style='padding-top:32rpx;'>
+      <view class='hot-text'>热门搜索</view>
+    </view>
+    <view class='serch-label flex-row-f'>
+      <view class='label' wx:for="{{ hotLabel }}" wx:key="{{ index }}" data-value='{{ item }}' bindtap='selectLabel'>{{ item }}</view>
+    </view>
+  </view>
+ 
+  <!-- 搜索结果 -->
+  <list 
+    wx:else 
+    bind:selectSort="selectSort" 
+    listData="{{ listData }}" 
+    role="{{ userInfo.role }}" 
+    isBaseLine='1' 
+    bind:loadMore="loadMore" 
+    isTop="1" 
+    addGoods="{{addGoods}}" 
+    bind:changeList="changelist" 
+    showList='{{showListType}}'
+    shopList='{{shopList}}'
+    isMainSearch="{{isMainSearch}}"></list>
+  <modal wx:if="{{ isShowModal }}" isShowModal="{{ isShowModal }}" isTopTwo="{{id}}"></modal>
+  <message title="清空确认" subTitle="确定要清空历史记录吗？" confirmText="确认" wx:if="{{ showMask }}" bind:colse="closeModal" bind:confirm="confirmDeleta"></message>
+  <!-- <share showShare="{{ showShare }}" bind:shareSuccess="shareSuccess" shareImg="{{ shareImg.share_img }}"></share> -->
+  <shop-tabbar 
+    isShowTab='{{isShowTab}}'
+    curIndex='1'
+    shopId="{{shopId}}"
+    />
+</block>
+<view wx:else>
+  <page-loding></page-loding>
+</view>
